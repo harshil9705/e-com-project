@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-end{
+    justify-content: flex-end;
+}
+
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+
+.line-section{
+    background-image: url(../img/bg-1.jpg);
+    padding: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.line-section h2{
+    font-size: 50px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    border: 1px solid;
+}
+
+.in-box{
+    border: 1px solid #E6E6E6;
+    height: 70%;
+    width: 40%;
+    padding: 50px 70px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+select option{
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    line-height: 1.6923;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #E6E6E6;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+input::placeholder{
+    color: #333;
+}
+
+select{
+    height: 50px;
+    width: 100%;
+    border: 1px solid #E6E6E6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+#user-btn{
+    border-radius: 23px;
+    background-color: #222;
+    width: 100%;
+    height: 46px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.466667;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all 0.4s;
+}
+
+#user-btn:hover{
+    /* color: #fff; */
+    background-color: #6c7ae0;
+}
+    

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozastore - Log In</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+        <%- include('nav')%>
+        <section class="line-section">
+            <h2>Log In</h2>
+        </section>
+        <div class="box">
+            <div class="in-box" style="height: 50%;">
+                <form action="/user/login" method="post">
+                    <input type="text" name="email" placeholder="Your Email Address"><br>
+                    <input type="text" name="password" placeholder="Enter Password"><br>
+                    <a href="" style="display: flex; margin-bottom: 15px; margin-left: 10px; font-size: 15px; font-weight: 600; color: #717fe0;">Forget Password</a>
+                    <button type="submit" id="user-btn">log in</button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
