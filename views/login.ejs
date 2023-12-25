@@ -13,14 +13,16 @@
             <h2>Log In</h2>
         </section>
         <div class="box">
-            <div class="in-box" style="height: 50%;">
+            <div class="in-box">
                 <form action="/user/login" method="post">
-                    <input type="text" name="email" placeholder="Your Email Address"><br>
-                    <input type="text" name="password" placeholder="Enter Password"><br>
-                    <a href="" style="display: flex; margin-bottom: 15px; margin-left: 10px; font-size: 15px; font-weight: 600; color: #717fe0;">Forget Password</a>
-                    <button type="submit" id="user-btn">log in</button>
+                    <input type="text" name="email" placeholder="Your Email Address" required><br>
+                    <input type="text" name="password" placeholder="Enter Password" required><br>
+                    <a href="/user/mail" style="display: flex; margin-bottom: 15px; margin-left: 10px; font-size: 15px; font-weight: 600; color: #717fe0;"
+                    >Forget Password</a>
+                    <button type="submit" class="user-btn">log in</button>
                 </form>
             </div>
         </div>
+        <%- include("footer") %>
 </body>
 </html>

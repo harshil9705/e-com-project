@@ -13,6 +13,6 @@ const productschema = new mongoose.Schema({
     seller:{type:mongoose.Schema.Types.ObjectId,ref:"user"}
 })
 
-const product = mongoose.model("productt",productschema)
+const product = mongoose.model("product",productschema)
 
 module.exports = {product}

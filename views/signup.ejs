@@ -9,20 +9,23 @@
 </head>
 <body>
         <%- include('nav')%>
-        <%- include('l-section')%>
+        <section class="line-section">
+            <h2>Sign Up</h2>
+        </section>
         <div class="box">
             <div class="in-box">
                 <form action="/user/signup" method="post"  >
-                    <input type="text" name="username" placeholder="Enter Username"><br>
-                    <input type="text" name="email" placeholder="Your Email Address"><br>
-                    <input type="text" name="password" placeholder="Enter Password"><br>
+                    <input type="text" name="username" placeholder="Enter Username" required><br>
+                    <input type="text" name="email" placeholder="Your Email Address" required><br>
+                    <input type="text" name="password" placeholder="Enter Password" required><br>
                     <select name="role" id="">
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select><br>
-                    <button type="submit" id="user-btn">Sign Up</button>
+                    <button type="submit" class="user-btn">Sign Up</button>
                 </form>
             </div>
         </div>
+        <%- include("footer") %>
 </body>
 </html>
