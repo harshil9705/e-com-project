@@ -64,14 +64,11 @@ const list = async(req,res)=>{
 const updatestock = async(req,res)=>{
     try {
         const stock = req.body.stock
-        console.log(stock)
         const {id} = req.params
 
         const update = await product.findById(id)
-        console.log(update)
         update.stock = stock;
         update.save();
-        console.log(update)
         res.send("updated")
     } catch (error) {
         res.send({error:error.message})

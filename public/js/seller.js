@@ -42,7 +42,6 @@ const display = (data) =>{
             let data = {
                 stock:updatedstock
             }
-            console.log(data);
             fetch(`/product/stockupdate/${ele._id}`,{
                 method:"PATCH",
                 headers:{"Content-type":"application/json"},
