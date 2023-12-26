@@ -27,7 +27,8 @@ const display = (data) =>{
         
         let stock = document.createElement("input")
         stock.value=ele.stock
-        stock.setAttribute("id","sstock")
+        stock.setAttribute("id",`sstock${ele._id}`)
+        stock.setAttribute("class","sstock")
 
         let update = document.createElement("button")
         update.setAttribute("id","stockupdate")
@@ -35,7 +36,8 @@ const display = (data) =>{
 
         update.addEventListener("click",()=>{
             location.reload();
-            let updatedstock = document.getElementById("sstock").value
+            let updatedstock = document.getElementById(`sstock${ele._id}`).value
+
             // console.log(updatedstock);
             let data = {
                 stock:updatedstock

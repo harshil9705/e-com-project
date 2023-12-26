@@ -3,6 +3,9 @@ const display = (data) =>{
     
     document.getElementById("ui").innerHTML=""
     data.map((ele)=>{
+        if(ele.item){
+            ele = ele.item
+        }
         const img = document.createElement("img")
         img.setAttribute("class","image")
         img.src=ele.image
