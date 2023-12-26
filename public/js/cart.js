@@ -5,10 +5,10 @@ const cart  = async(req,res)=>{
     display(json)
 }
 
+var subtotal = 0
 const display = (data)=>{
     document.getElementById("ui").innerHTML=""
     let prototal = 0
-    let subtotal = 0
     data.map((element)=>{
 
         let ele = element.productId
@@ -95,8 +95,8 @@ const display = (data)=>{
         document.getElementById("subtotal").innerHTML=`₹ ${subtotal.toFixed(2)}`
         document.getElementById("total").innerHTML=`₹ ${subtotal.toFixed(2)}`
     })
+    document.getElementById("payment").addEventListener("click",()=>handlepayment(subtotal))
 }
-
 const quantity = (id,qty)=>{
     // console.log(id,qty);
     try {
@@ -110,6 +110,20 @@ const quantity = (id,qty)=>{
     } catch (error) {
         console.log(error.message);
     }
+}
+
+const handlepayment = async(amount)=>{  
+
+    const data = await fetch("/cart/payment",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({amount:amount})
+    })
+    let order = await data.json()
+    
+    let option = {key : "rzp_test_4AF6dVprVS1pi5" , amount : order.amount}
+    let razorpay = new Razorpay(option)
+    razorpay.open()
 }
 
 cart()

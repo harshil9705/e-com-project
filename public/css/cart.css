@@ -95,7 +95,7 @@ table{
     font-family: 'Poppins', sans-serif;
 }
 
-#btn{
+#payment{
     border-radius: 23px;
     background-color: #222;
     width: 100%;
@@ -109,7 +109,7 @@ table{
     transition: all 0.4s;
 }
 
-#btn:hover{
+#payment:hover{
     /* color: #fff; */
     background-color: #6c7ae0;
 }

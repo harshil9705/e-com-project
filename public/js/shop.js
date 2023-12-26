@@ -47,7 +47,7 @@ const filter = (data)=>{
 
 const search = ()=>{
     let value = document.getElementById("search").value
-    fetch(`/product/search?product=${value}`)
+    fetch(`/product/search?query=${value}`)
     .then((data)=>data.json())
     .then((res)=>display(res))
 }

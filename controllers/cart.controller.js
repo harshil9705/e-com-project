@@ -1,4 +1,6 @@
+const Razorpay = require("razorpay")
 const { cart } = require("../models/cart.schema")
+require("dotenv").config()
 
 // get
 const getcart = (req,res)=>{
@@ -59,5 +61,31 @@ const quantity = async(req,res)=>{
     res.send({data})
 } 
 
+// payment
 
-module.exports = {getcart,senttocart,show,quantity}
+const razorpayinstance = new Razorpay({
+    key_id: process.env.razorpay_id_key,
+    key_secret: process.env.razorpay_secret_key
+})
+
+const payment = async(req,res)=>{
+    try {
+        const amount = req.body.amount*100
+        const option  = {
+            amount:amount,
+        }
+        razorpayinstance.orders.create(option,(error,order)=>{
+            if(error){
+                res.send({error:error.message})
+            }
+            else{
+                res.send(order)
+            }
+        })
+    } catch (error) {
+        res.send({error:error.message})
+    }
+} 
+
+
+module.exports = {getcart,senttocart,show,quantity,payment}

@@ -64,9 +64,14 @@ const list = async(req,res)=>{
 const updatestock = async(req,res)=>{
     try {
         const stock = req.body.stock
+        console.log(stock)
         const {id} = req.params
 
-        const update = await product.findByIdAndUpdate(id,{stock})
+        const update = await product.findById(id)
+        console.log(update)
+        update.stock = stock;
+        update.save();
+        console.log(update)
         res.send("updated")
     } catch (error) {
         res.send({error:error.message})
@@ -75,7 +80,7 @@ const updatestock = async(req,res)=>{
 
 const search = async(req,res)=>{
     try {
-        const query = req.query.product;
+        const {query} = req.query;
         const products = await product.find();
 
         const options = {
@@ -84,7 +89,8 @@ const search = async(req,res)=>{
 
         const fuse = new Fuse(products,options);
         const result = fuse.search(query);
-        return res.send(result)
+        
+        return res.send(result);
         
     } catch (error) {
         return res.send({error:error.message})
