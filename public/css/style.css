@@ -409,3 +409,27 @@ table{
 #stockupdate{
     background-color: #f7f7f7;
 }
+
+/* .notwork{
+    pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+} */
+
+#cart2:disabled{
+    display: inline-block;
+    margin: 20px 0 10px;
+    padding: 12px;
+    background-color: #b6adb4;
+    border-radius: 23px;
+    border: 0px;
+    text-align: center;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    opacity: 0.5;
+}

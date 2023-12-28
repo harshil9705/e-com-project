@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const { getsignup, getlogin, signup, login,  mail, getforget, getopt, authotp, forget } = require("../controllers/user.controllers")
+const { getsignup, getlogin, signup, login,  mail, getforget, getopt, authotp, forget, logout } = require("../controllers/user.controllers")
 const { authuser } = require("../middleware/user.middleware")
 const userrouter = Router()
 
@@ -16,6 +16,8 @@ userrouter.get("/verifyotp",authotp)
 userrouter.get("/otp",getopt)
 
 userrouter.get("/forget",getforget)
+
+userrouter.get("/logout",logout)
 
 // post
 

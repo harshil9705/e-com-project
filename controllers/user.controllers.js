@@ -66,7 +66,7 @@ const login = async(req,res)=>{
                 }
                 else if(result){
                     const token = jwt.sign({id:data._id,role:data.role},process.env.key)
-                    res.cookie("token",token).redirect("/product/")
+                    res.cookie("token",token).cookie("role",data.role).redirect("/product/")
                 }
                 else{
                     res.send({error:"Password Incorrect"})
@@ -79,6 +79,10 @@ const login = async(req,res)=>{
     } catch (error) {
         res.send({error:error.message})
     }
+}
+
+const logout = async(req,res)=>{
+    res.clearCookie("token").clearCookie("role").redirect("/product/")
 }
 
 
@@ -145,4 +149,4 @@ const forget = async(req,res)=>{
 }
 
 
-module.exports = {getlogin,getsignup,getforget,getopt,signup,login,mail,authotp,forget}
+module.exports = {getlogin,getsignup,getforget,getopt,signup,login,mail,authotp,forget,logout}
