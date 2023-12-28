@@ -64,8 +64,8 @@ const quantity = async(req,res)=>{
 // payment
 
 const razorpayinstance = new Razorpay({
-    key_id: process.env.razorpay_id_key,
-    key_secret: process.env.razorpay_secret_key
+    // key_id: process.env.razorpay_id_key,
+    // key_secret: process.env.razorpay_secret_key
 })
 
 const payment = async(req,res)=>{
