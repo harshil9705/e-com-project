@@ -121,8 +121,8 @@ const handlepayment = async(amount)=>{
     })
     let order = await data.json()
     
-    let option = {key : "rzp_test_4AF6dVprVS1pi5" , amount : order.amount}
-    let razorpay = new Razorpay(option)
+    // let option = {key : "rzp_test_4AF6dVprVS1pi5" , amount : order.amount}
+    // let razorpay = new Razorpay(option)
     razorpay.open()
 }
 
